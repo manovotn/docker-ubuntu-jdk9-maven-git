@@ -7,14 +7,6 @@ RUN apt-get update; apt-get install -y \
 #first, get openjdk-9
 RUN apt install openjdk-9-jdk -y
 
-#RUN echo oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
-
-#RUN add-apt-repository -y ppa:webupd8team/java && \
-#   apt-get update; \
-#   apt-get install -y oracle-java9-installer; \
-#   apt-get install -y oracle-java9-set-default; \
-#rm -rf /var/cache/oracle-jdk9-installer
-
 #update or die :-P
 RUN sudo apt-get -qq update
 
@@ -29,7 +21,7 @@ RUN sudo ln -s /usr/local/apache-maven-3.3.9/bin/mvnDebug /usr/bin/mvnDebug
 RUN sudo apt-get install git -y
 
 #clone repo with simple JDK 9 project
-#RUN git clone https://github.com/manovotn/JDK9Playground.git
+RUN git clone https://github.com/manovotn/JDK9Playground.git
 
 #trigger build
 RUN mvn clean install -f JDK9Playground/pom.xml
