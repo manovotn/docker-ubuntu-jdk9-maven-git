@@ -5,13 +5,14 @@ MAINTAINER manovotn
 RUN apt-get update; apt-get install -y \
     software-properties-common \
     python-software-properties \
-    wget -y
+    wget -y \
+    vim -y
 
-#get Java, we need to do so manually, as repositories are:
+# Get Java, we need to do so manually, as repositories are:
 # - steaming pile of poop
 # - outdated
 # - broken (security exception)
-RUN wget http://www.java.net/download/java/jigsaw/archive/142/binaries/jigsaw-jdk-9-ea+142_linux-x64_bin.tar.gz -O jdk-9.tar.gz
+RUN wget http://www.java.net/download/java/jigsaw/archive/145/binaries/jigsaw-jdk-9-ea+145_linux-x64_bin.tar.gz -O jdk-9.tar.gz
 RUN tar -zxvf jdk-9.tar.gz
 
 # prepare env variables for Java
