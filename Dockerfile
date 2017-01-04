@@ -12,7 +12,7 @@ RUN apt-get update; apt-get install -y \
 # - steaming pile of poop
 # - outdated
 # - broken (security exception)
-RUN wget http://www.java.net/download/java/jigsaw/archive/145/binaries/jigsaw-jdk-9-ea+145_linux-x64_bin.tar.gz -O jdk-9.tar.gz
+RUN wget http://www.java.net/download/java/jigsaw/archive/148/binaries/jigsaw-jdk-9-ea+148_linux-x64_bin.tar.gz -O jdk-9.tar.gz
 RUN tar -zxvf jdk-9.tar.gz
 
 # prepare env variables for Java
